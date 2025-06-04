@@ -1,0 +1,22 @@
+.info-box {
+  width: 100%;
+  background-color: #D9D9D9;
+  padding: 20px;
+  text-align: left;
+}
+
+.info-box h4 {
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
+.info-box h2 {
+  margin: 0 0 5px;
+  text-align: center;
+}
+
+.info-box h5 {
+  margin: 0;
+  font-weight: normal;
+  color: #333;
+}

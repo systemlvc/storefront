@@ -68,7 +68,7 @@ import CreditCard from '@dropins/storefront-payment-services/containers/CreditCa
 import { render as PaymentServices } from '@dropins/storefront-payment-services/render.js';
 import { getConfigValue } from '../../scripts/configs.js';
 import { getUserTokenCookie } from '../../scripts/initializers/index.js';
-
+import { createInfoBox } from '../info-box/info-box.js';
 // Block-level
 import createModal from '../modal/modal.js';
 
@@ -163,6 +163,7 @@ export default async function decorate(block) {
           <div class="checkout__block checkout__order-summary"></div>
           <div class="checkout__block checkout__gift-options"></div>
           <div class="checkout__block checkout__cart-summary"></div>
+          <div class="checkout__block checkout__info-store"></div>
         </div>
       </div>
     </div>
@@ -205,6 +206,13 @@ export default async function decorate(block) {
     '.checkout__gift-options',
   );
   const $termsAndConditions = checkoutFragment.querySelector('.checkout__terms-and-conditions');
+  const $infoStore = checkoutFragment.querySelector('.checkout__info-store');
+
+  // Info box
+  const infoBox = createInfoBox('Questions ?', 'We are here to help, customer service representatives are available Monday - Friday: 8am - 4:30pm CT', '888.819.0121');
+
+  // Add info box to DOM
+  $infoStore.appendChild(infoBox);
 
   block.appendChild(checkoutFragment);
 
